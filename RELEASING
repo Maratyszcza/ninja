@@ -8,17 +8,20 @@ Push new release branch:
 4. git checkout release; git merge master
 5. fix version number in src/version.cc (it will likely conflict in the above)
 6. fix version in doc/manual.asciidoc (exists only on release branch)
-7. commit, tag, push (don't forget to push --tags)
+7. fix version number in misc/setup.py
+8. commit, tag, push (don't forget to push --tags)
        git commit -am v1.5.0; git push origin release
-       git tag v1.5.0; git push --tags
-       # Push the 1.5.0.git change on master too:
-       git checkout master; git push origin master
-8. construct release notes from prior notes
+9. construct release notes from prior notes
    credits: git shortlog -s --no-merges REV..
 
 Release on github:
 1. https://github.com/blog/1547-release-your-software
    Add binaries to https://github.com/ninja-build/ninja/releases
+
+Release on PyPI:
+1. http://peterdowns.com/posts/first-time-with-pypi.html
+2. Navigate to "misc" and execute
+       python setup.py sdist upload -r pypi
 
 Make announcement on mailing list:
 1. copy old mail
