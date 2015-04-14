@@ -10,7 +10,10 @@ Push new release branch:
 6. fix version in doc/manual.asciidoc (exists only on release branch)
 7. fix version number in misc/setup.py
 8. commit, tag, push (don't forget to push --tags)
-       git commit -am v1.5.0; git push origin release
+       git commit -a -m v1.5.0; git push origin release
+       git tag v1.5.0; git push --tags
+       # Push the 1.5.0.git change on master too:
+       git checkout master; git push origin master
 9. construct release notes from prior notes
    credits: git shortlog -s --no-merges REV..
 
